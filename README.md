@@ -1,2 +1,2 @@
 # Data_Structures
-DSA Programs
+Data Structures and Algorithms
