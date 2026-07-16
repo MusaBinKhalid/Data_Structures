@@ -1,15 +1,14 @@
-#include <stdio.h>
+# include <stdio.h>
 
-int array[] = {8, 14, 3, 17, 10, 2, 19, 7, 5, 12, 1, 16, 9, 4, 13, 20, 6, 15, 11, 18}; 
+int array[] = {8, 14, 3, 17, 10, 2, 19, 7, 5, 12, 1, 16, 9, 4, 13, 20, 6, 15, 11, 18};
 
-void sort()
+void selectionSort(int array[])
 {
-    int temp, minIndex;
-
-    for (int i = 1; i < 5; i++)
+    int minIndex, temp;
+    for (int i = 0; i < 20-1; i++)
     {
         minIndex = i;
-        for (int j = i+1; j < 6; j++)
+        for (int j = i+1; j < 20; j++)
         {
             if (array[j] < array[minIndex])
             {
@@ -19,13 +18,12 @@ void sort()
         temp = array[i];
         array[i] = array[minIndex];
         array[minIndex] = temp;
-    }
+    } 
 }
 
-int main(void)
+int main()
 {
-
-    sort(array);
+    selectionSort(array);
 
     printf("Array: [");
     for (int i = 0; i < 20; i++)
@@ -38,6 +36,4 @@ int main(void)
         printf(",");
     }
     printf("]");
-
-    return 0;
 }
