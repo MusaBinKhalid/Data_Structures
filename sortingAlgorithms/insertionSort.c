@@ -1,46 +1,34 @@
-#include <stdio.h>
-int array[] = {19, 13, 5, 9, 14, 17}; 
+# include <stdio.h>
 
-void printArray()
+int array[] = {8, 14, 3, 17, 10, 2, 19, 7, 5, 12, 1, 16, 9, 4, 13, 20, 6, 15, 11, 18};
+
+void insertionSort(int array[])
 {
-    printf("\nArray: [");
-    for (int i = 0; i < 6; i++)
+    int temp, j;
+    for (int i = 1; i < 20; i++)
+    {
+        temp = array[i];
+        for (j = i-1; j >= 0 && array[j] > temp; j--)
+        {
+            array[j+1] = array[j];
+        }
+        array[j+1] = temp;
+    } 
+}
+
+int main()
+{
+    insertionSort(array);
+
+    printf("Array: [");
+    for (int i = 0; i < 20; i++)
     {
         printf("%d", array[i]);
-        if (i == 6-1)
+        if (i == 20-1)
         {
             continue;
         }
         printf(",");
     }
     printf("]");
-}
-
-
-void sort()
-{
-    int temp, j;
-
-    for (int i = 1; i < 6; i++)
-    {
-        temp = array[i];
-        j = i - 1;
-
-    for (j = i - 1; j >= 0 && array[j] > temp; j--)
-    {
-        array[j + 1] = array[j];
-    }
-    
-    array[j + 1] = temp;
-    printArray();
-    }
-}
-
-int main(void)
-{
-    printArray();
-    
-    sort(array);
-
-    return 0;
 }
